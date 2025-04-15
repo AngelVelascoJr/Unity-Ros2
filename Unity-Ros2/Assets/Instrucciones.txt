@@ -6,7 +6,8 @@ Follow these steps if using ROS2:
 
 a) If you don't already have a ROS2 environment set up, we recommend using Docker. Navigate to tutorials/ros_unity_integration in your copy of this repo and run the following commands:
 
-docker build -t foxy -f ros2_docker/Dockerfile .
+cd D:\Documentos\Ros2-Unity\Unity-Robotics-Hub\tutorials\ros_unity_integration
+(solo una vez) docker build -t foxy -f ros2_docker/Dockerfile .
 docker run -it --rm -p 10000:10000 foxy /bin/bash
 
 
