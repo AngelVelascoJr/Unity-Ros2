@@ -1,0 +1,26 @@
+Las instrucciones completas se encuentran aquí:
+
+https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md#ros2-environment
+
+Follow these steps if using ROS2:
+
+a) If you don't already have a ROS2 environment set up, we recommend using Docker. Navigate to tutorials/ros_unity_integration in your copy of this repo and run the following commands:
+
+docker build -t foxy -f ros2_docker/Dockerfile .
+docker run -it --rm -p 10000:10000 foxy /bin/bash
+
+
+This should build a docker image and start it.
+
+b) In your workspace, run the following command, replacing <your IP address> with your ROS machine's IP or hostname.
+
+
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<your IP address>
+
+
+If you're running ROS in a Docker container, 0.0.0.0 is a valid incoming address, so you can write ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=0.0.0.0
+Once the server_endpoint has started, it will print something similar to [INFO] [1603488341.950794]: Starting server on 192.168.50.149:10000.
+
+c)(Alternative) If you need the server to listen on a port that's different from the default 10000, here's the command line to also set the ROS_TCP_PORT parameter:
+
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=127.0.0.1 -p ROS_TCP_PORT:=10000
