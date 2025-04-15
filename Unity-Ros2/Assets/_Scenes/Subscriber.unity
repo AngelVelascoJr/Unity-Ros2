@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 563701421}
   - component: {fileID: 563701422}
   m_Layer: 0
-  m_Name: Publisher
+  m_Name: Subscriber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
